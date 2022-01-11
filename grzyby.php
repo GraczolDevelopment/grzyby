@@ -28,11 +28,16 @@
             //skrypt 1
         </script>
     </div>
-    <div class="right"></div>
+    <div class="right">
+        <h2>Grzyby jadalne</h2>
+        //skrypt nr 2
+        <h2>Polecamy do sosów</h2>
+        //skrypt nr 3
+    </div>
 </section>
 
 <section class="footer">
-
+    <p>Autor: SIEMA</p>
 </section>
 
 </body>
