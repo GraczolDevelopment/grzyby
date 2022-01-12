@@ -23,16 +23,46 @@
 </section>
 
 <section class="main" >
-    <div class="left">
-        <script>
-            //skrypt 1
-        </script>
+    <div class="lewy">
+        <?php
+
+        $connection = new mysqli("localhost", "root", "", "dane2");
+        $result = $connection->query("SELECT `nazwa_pliku`, `potoczna` FROM `grzyby`;");
+
+        foreach ($result as $row) {
+            echo '<img src="img/' . $row['nazwa_pliku'] . '" title="' . $row['potoczna'] . '">';
+        }
+
+        $connection->close();
+        ?>
     </div>
-    <div class="right">
+    <div class="prawy">
         <h2>Grzyby jadalne</h2>
-        //skrypt nr 2
+        <?php
+
+        $connection = new mysqli("localhost", "root", "", "dane2");
+        $result = $connection->query("SELECT `nazwa`,`potoczna` FROM `grzyby` WHERE `jadalny` = 1;");
+
+        foreach ($result as $row) {
+            echo '<p>' . $row['nazwa'] . ' (' . $row['potoczna'] . ')</p>';
+        }
+
+        $connection->close();
+        ?>
         <h2>Polecamy do sosów</h2>
-        //skrypt nr 3
+        <?php
+
+        $connection = new mysqli("localhost", "root", "", "dane2");
+        $result = $connection->query("SELECT `grzyby`.`nazwa`, `grzyby`.`potoczna`, `rodzina`.`nazwa` AS `rodzina_nazwa`  FROM `grzyby` INNER JOIN `rodzina` ON `grzyby`.`rodzina_id`=`rodzina`.id INNER JOIN `potrawy` ON `grzyby`.`potrawy_id`=`potrawy`.id WHERE `potrawy`.`nazwa` = \"sos\";");
+
+        echo "<ol>";
+        foreach ($result as $row) {
+            echo '<li> ' . $row['nazwa'] . ' (' . $row['potoczna'] . '), rodzina: ' . $row['rodzina_nazwa'] . '</li>';
+        }
+        echo "</ol>";
+
+        $connection->close();
+        ?>
     </div>
 </section>
 

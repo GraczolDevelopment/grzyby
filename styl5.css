@@ -1,0 +1,52 @@
+html {
+    font-family: 'Verdana', serif;
+}
+
+body {
+    margin: 0;
+}
+
+.mini {
+    background-color: sienna;
+    height: 100px;
+    width: 20%;
+    float: left;
+}
+
+.title {
+    background-color: sienna;
+    color: orange;
+    height: 100px;
+    width: 80%;
+    float: left;
+}
+
+.lewy {
+    background-color: burlywood;
+    height: 700px;
+    width: 70%;
+    float: left;
+}
+
+.prawy {
+    background-color: burlywood;
+    height: 700px;
+    width: 30%;
+    float: left;
+}
+
+.footer {
+    background-color: sienna;
+    color: orange;
+    text-align: center;
+}
+
+img {
+    margin: 7px;
+    padding: 5px;
+    border: 1px solid rosybrown;
+}
+
+img:hover {
+    border: 1px solid maroon;
+}
